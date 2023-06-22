@@ -1,0 +1,85 @@
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.custom-dropdown {
+  position: relative;
+}
+
+.selected-option {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-icon {
+  margin-left: 0.5rem;
+}
+
+.options-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  display: none;
+}
+
+.custom-dropdown.open .options-list {
+  display: block;
+}
+
+.option-with-icon {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.option-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.option-with-icon.react {
+  background-image: url(../../assets/react.png);
+  width: 20px;
+}
+
+.option-with-icon.angular {
+  background-image: url(../../assets/angular.png);
+  width: 20px
+}
+
+.option-with-icon.vue {
+  background-image: url(../../assets/vue.png);
+  width: 20px
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .select-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .selected-option {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

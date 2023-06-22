@@ -1,0 +1,34 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+.app__title {
+  font-size: 24px;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.app__posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .app__posts {
+    grid-template-columns: 1fr;
+  }
+}
