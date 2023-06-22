@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.c {
+.pagination__button--active {
   background-color: blue;
   color: #fff;
 }

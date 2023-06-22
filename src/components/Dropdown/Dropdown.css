@@ -1,13 +1,15 @@
 .select-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 1rem;
-  padding: 1rem;
+  width: 400px;
 }
 
 .custom-dropdown {
   position: relative;
+  padding: auto 1rem;
+  align-self: center;
 }
 
 .selected-option {
@@ -17,18 +19,27 @@
   border: 1px solid #ccc;
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 150px;
 }
 
 .arrow-icon {
   margin-left: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+  margin-left: auto;
 }
 
+.custom-dropdown.open .arrow-icon {
+  transform: rotate(180deg);
+}
 .options-list {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  width: 200px;
+  /* Adjust the width as needed */
+  max-width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,6 +48,7 @@
   border-top: none;
   border-radius: 0 0 4px 4px;
   display: none;
+  white-space: nowrap;
 }
 
 .custom-dropdown.open .options-list {
@@ -44,10 +56,11 @@
 }
 
 .option-with-icon {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .option-icon {
@@ -56,30 +69,26 @@
   margin-right: 0.5rem;
 }
 
-.option-with-icon.react {
-  background-image: url(../../assets/react.png);
-  width: 20px;
+
+.option-with-icon:hover {
+  background-color: #f0f0f0;
 }
 
-.option-with-icon.angular {
-  background-image: url(../../assets/angular.png);
-  width: 20px
-}
-
-.option-with-icon.vue {
-  background-image: url(../../assets/vue.png);
-  width: 20px
-}
 
 /* Media query for responsive design */
 @media (max-width: 768px) {
   .select-container {
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
 
   .selected-option {
     width: 100%;
     margin-bottom: 1rem;
+  }
+
+  .custom-dropdown {
+    width: 100%;
   }
 }
